@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">I am a bug</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-11-12T21:06:47&#43;08:00</updated>
+    <updated>2020-11-16T21:16:25&#43;08:00</updated>
     <id>https://iamabug.github.io/</id>
     <link rel="alternate" type="text/html" href="https://iamabug.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://iamabug.github.io/atom.xml" />
@@ -16,6 +16,193 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
     <generator uri="https://gohugo.io/" version="0.74.3">Hugo</generator>
+        <entry>
+            <title type="text">深入浅出Spark中的Join（一）</title>
+            <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/spark-join-part-1/" />
+            <id>https://iamabug.github.io/posts/spark-join-part-1/</id>
+            <updated>2020-11-15T21:53:02&#43;08:00</updated>
+            <published>2020-11-15T20:03:15&#43;08:00</published>
+            <author>
+                    <name>iamabug</name>
+                    <uri>https://iamabug.github.io/</uri>
+                    <email>ChenChi.Tan.2020@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">在数据分析和处理的过程中，我们经常会用Join操作来关联两个数据集，Spark作为一个通用的分析引擎，能够支持多种Join的应用场景。 Join操作的输入是两个数据集，A和B，将数据集A中的每一条记录和数据集B中的每一条记录进行比对，每发现一条符合条件的记录时，返回一条新的记录，新记录中的字段可以只从A中来，也可以只从B中来，也可以分别从A和B中取一部分，因此…</summary>
+            
+                <content type="html">&lt;p&gt;在数据分析和处理的过程中，我们经常会用Join操作来关联两个数据集，Spark作为一个通用的分析引擎，能够支持多种Join的应用场景。&lt;/p&gt;
+&lt;p&gt;Join操作的输入是两个数据集，A和B，将数据集A中的每一条记录和数据集B中的每一条记录进行比对，每发现一条符合条件的记录时，返回一条新的记录，新记录中的字段可以只从A中来，也可以只从B中来，也可以分别从A和B中取一部分，因此，Join后的记录可以表示两个数据集中记录的结合。&lt;/p&gt;
+&lt;h1 id=&#34;影响spark-join操作的三个因素&#34;&gt;影响Spark Join操作的三个因素&lt;/h1&gt;
+&lt;p&gt;具体到Spark中Join操作的执行，有三个影响较大的因素。&lt;/p&gt;
+&lt;h2 id=&#34;输入数据集的大小&#34;&gt;输入数据集的大小&lt;/h2&gt;
+&lt;p&gt;输入数据集的大小直接影响Join操作的效率和可靠性，此外，除了绝对大小，数据集之间的相对大小也对效率和可靠性有影响。&lt;/p&gt;
+&lt;h2 id=&#34;join条件&#34;&gt;Join条件&lt;/h2&gt;
+&lt;p&gt;Join条件通常是两个数据集中字段的逻辑比较，一般可以分为&lt;strong&gt;等值Join&lt;/strong&gt;和&lt;strong&gt;不等值Join&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;等值Join可以包含一个相等条件或多个需要同时满足的相等条件，比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一个相等条件：&lt;code&gt;A.x == B.x&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;多个相等条件：&lt;code&gt;A.x == B.x and A.y == B.y&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;注：x 和 y 是数据集A和B中的字段。&lt;/p&gt;
+&lt;p&gt;不等值Join使用不相等条件或者不需要同时满足的相等条件，比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不相等条件：&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;join类型&#34;&gt;Join类型&lt;/h2&gt;
+&lt;p&gt;参考链接：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://towardsdatascience.com/demystifying-joins-in-apache-spark-38589701a88e&#34;&gt;https://towardsdatascience.com/demystifying-joins-in-apache-spark-38589701a88e&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/lsr40/article/details/99569049&#34;&gt;https://blog.csdn.net/lsr40/article/details/99569049&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://iamabug.github.io/categories/spark/" term="Spark" label="Spark" />
+                            
+                        
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">过滤Spark数据集的四种方法</title>
+            <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2020-11-13-four-ways-to-filter-large-spark-dataset/" />
+            <id>https://iamabug.github.io/posts/2020-11-13-four-ways-to-filter-large-spark-dataset/</id>
+            <updated>2020-11-16T20:29:55&#43;08:00</updated>
+            <published>2020-11-13T11:01:33&#43;08:00</published>
+            <author>
+                    <name>iamabug</name>
+                    <uri>https://iamabug.github.io/</uri>
+                    <email>ChenChi.Tan.2020@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">在实际工作中，根据某个字段，对一个Spark数据集进行过滤，是一个很常见的场景，举个例子： 一个存储公司员工信息的数据集A，有以下三个字段： id: Integer name: String age: Integer 现在要过滤出某些员工的id，这些id在B集合（B可能是哈希表，也可能是Spark数据集）中，过滤逻辑为： C = A.filter(A.id in B) 有四种方法可以实现，分别为： Filter Map MapPartition Inner Join 下面详细介绍。 Filter Spark的Filter变换，可以根据条件…</summary>
+            
+                <content type="html">&lt;p&gt;在实际工作中，根据某个字段，对一个Spark数据集进行过滤，是一个很常见的场景，举个例子：&lt;/p&gt;
+&lt;p&gt;一个存储公司员工信息的数据集A，有以下三个字段：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;id: Integer
+name: String
+age: Integer
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;现在要过滤出某些员工的id，这些id在B集合（B可能是哈希表，也可能是Spark数据集）中，过滤逻辑为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;C = A.filter(A.id in B)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;有四种方法可以实现，分别为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Filter&lt;/li&gt;
+&lt;li&gt;Map&lt;/li&gt;
+&lt;li&gt;MapPartition&lt;/li&gt;
+&lt;li&gt;Inner Join&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面详细介绍。&lt;/p&gt;
+&lt;h1 id=&#34;filter&#34;&gt;Filter&lt;/h1&gt;
+&lt;p&gt;Spark的Filter变换，可以根据条件表达式、返回布尔值的过滤函数、条件字符串，对数据集进行过滤，使用方法如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-scala&#34; data-lang=&#34;scala&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 1. 条件表达式
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A1&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filter&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;Column&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;condition&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;// 2. 自定义过滤函数
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A1&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filter&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;FilterFunction&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;// 3. 条件字符串
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A1&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filter&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;condition&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;Filter 变换比较简单，逐条处理记录不论数据集大小，效率都很高，但需要能够将用来过滤的数据集B广播到所有的executor上。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;map&#34;&gt;Map&lt;/h1&gt;
+&lt;p&gt;Map变换，对数据集中每条记录调用一个函数，返回值可以是null，也可以是相同类型或不同类型的新记录，使用方法如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-scala&#34; data-lang=&#34;scala&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// encoder参数用来指定输出类型
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A2&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;MapFunction&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;U&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Encoder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;U&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;encoder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;通过Map变换实现过滤的话，只需要在Map变换中，将符合条件的记录原样返回，不符合条件的记录返回null即可。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;可以看到，Map变换的语义和Filter变换的语义相似，都是逐条处理记录，但Map需要提供一个额外的Encoder，故没有Filter简单和优雅，且因为输出要过滤null值，所以效率不如Filter。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;mappartitions&#34;&gt;MapPartitions&lt;/h1&gt;
+&lt;p&gt;MapPartitions变换，与Map变换类似，但映射函数不是在每条记录上调用，而是在分区级别调用，使用方法如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-scala&#34; data-lang=&#34;scala&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// func的输入和输出都是Iterator类型
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A3&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;MapPartitionsFunction&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;U&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Encoder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;U&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;encoder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;MapPartitions在分区级别进行操作，而不是记录级别，因此比Filter和Map效率更高。缺点的话，首先和Map一样，需要提供一个额外的Encoder，此外，当分区过大，超过executor所能提供的内存时，任务会失败，因此可靠性不如Map和Filter。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;inner-join&#34;&gt;Inner Join&lt;/h1&gt;
+&lt;p&gt;以员工id相等为Inner Join的条件，然后只要A集合中的字段，同样可以实现过滤，使用方法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-scala&#34; data-lang=&#34;scala&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// join表达式可能为 A(&amp;#34;id&amp;#34;) === B(&amp;#34;id&amp;#34;)
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A4&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;join&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;Dataset&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;?&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Column&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;joinExprs&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;Inner Join和Filter一样，效率和可靠性都有保证，且对B集合的类型和大小都没有偏好。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;总结&#34;&gt;总结&lt;/h1&gt;
+&lt;p&gt;在本文描述的过滤场景中，综合考虑效率和可靠性，如果用来过滤的集合比较小，可以广播到所有的executor中，那么选择Filter变换为佳，如果B集合很大，则Inner Join更合适。&lt;/p&gt;
+&lt;p&gt;参考链接：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://towardsdatascience.com/four-ways-to-filter-a-spark-dataset-against-a-collection-of-data-values-7d52625bcf20&#34;&gt;https://towardsdatascience.com/four-ways-to-filter-a-spark-dataset-against-a-collection-of-data-values-7d52625bcf20&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://spark.apache.org/docs/latest/api/java/index.html&#34;&gt;https://spark.apache.org/docs/latest/api/java/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html&#34;&gt;https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://iamabug.github.io/categories/spark/" term="Spark" label="Spark" />
+                            
+                        
+                    
+                
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">Kafka集群缩容实战</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2020-08-03-kafka-cluster-shrink/" />
@@ -1108,7 +1295,7 @@ log-start-offset-checkpoint  recovery-point-offset-checkpoint
             <title type="text">一次Kafka性能调优</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2020-07-21-debug-kafka-gc/" />
             <id>https://iamabug.github.io/posts/2020-07-21-debug-kafka-gc/</id>
-            <updated>2020-11-11T20:55:50&#43;08:00</updated>
+            <updated>2020-11-15T20:07:21&#43;08:00</updated>
             <published>2020-07-21T10:13:45&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -1309,12 +1496,6 @@ $ sudo -u kafka bash -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;jstat xxx&amp;#3
             
                 
                     
-                        
-                            
-                            
-                            
-                                <category scheme="https://iamabug.github.io/categories/debug/" term="Debug" label="Debug" />
-                            
                         
                             
                             
