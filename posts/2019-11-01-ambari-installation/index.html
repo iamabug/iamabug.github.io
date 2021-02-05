@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8" />
 
-    <meta name="generator" content="Hugo 0.74.3" /><meta name="theme-color" content="#fff" />
+    <meta name="generator" content="Hugo 0.80.0" /><meta name="theme-color" content="#fff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
@@ -14,11 +14,11 @@
 
     <title>从零使用本地仓库安装Ambari | I am a bug</title>
 
-    <link rel="stylesheet" href="/css/meme.min.e685eb049848bc709aa924591f0fe0f45ef392692ee87c638a5ed3c5d477c430.css"/>
+    <link rel="stylesheet" href="/css/meme.min.0c523bc1eddfee4197176f113aeaf4cbddf87cfc7010b5c3770a538f85279798.css"/>
 
     
     
-        <script src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js" defer></script><script src="/js/meme.min.d87f73b7872170ab5ce203318fce5457faeaacca4b59fe88a90b866fb9c3aa34.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" defer></script><script src="/js/meme.min.957c5405455643a3146b774cee819d0907699e002e75b5a4815a7bdc8064460c.js"></script>
 
     
 
@@ -34,7 +34,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="I am a bug" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="application-name" content="I am a bug" />
     <meta name="msapplication-starturl" content="../../" />
@@ -54,13 +54,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2019-11-01T20:25:59+00:00",
-        "dateModified": "2020-11-11T20:58:59+08:00",
+        "dateModified": "2021-02-05T11:41:45+08:00",
         "url": "https://iamabug.github.io/posts/2019-11-01-ambari-installation/",
         "headline": "从零使用本地仓库安装Ambari",
         "description": "Ambari和CDH一样，是较为流行的hadoop管理工具（虽然Hortonworks已经被Cloudera收购了），这篇文章我记录了如何从头安装ambari和HDP，主要是参照 HORTONWORKS的Ambari 2.7.4.0安装文档 进行的，当然要更精简一点。 准备工作 兼容性校验 在 Ambari的官方兼容性说明页面 确认操作系统、硬件、软件版本的兼容性，我们的相…",
         "inLanguage" : "en",
         "articleSection": "posts",
-        "wordCount":  3201 ,
+        "wordCount":  3199 ,
         "image": ["https://tva1.sinaimg.cn/large/006y8mN6ly1g8ikm8aiigj309a06jjru.jpg","https://tva1.sinaimg.cn/large/006y8mN6ly1g8ioe9z6jjj311s04lmxl.jpg"],
         "author": {
             "@type": "Person",
@@ -104,7 +104,7 @@
 <meta property="og:locale" content="en" /><meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8ikm8aiigj309a06jjru.jpg" />
 <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2019-11-01T20:25:59&#43;00:00" />
-    <meta property="article:modified_time" content="2020-11-11T20:58:59&#43;08:00" />
+    <meta property="article:modified_time" content="2021-02-05T11:41:45&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -253,7 +253,7 @@
     
     
         
-        <time datetime="2020-11-11T20:58:59&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2020.11.11</time>
+        <time datetime="2021-02-05T11:41:45&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2021.2.5</time>
     
     
     
@@ -267,7 +267,7 @@
     
     
         
-        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;3201</span>
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;3199</span>
     
     
         
@@ -526,13 +526,13 @@ sudo ambari-server stop
 <p>接下来的操作都在浏览器中完成，</p>
 <ol>
 <li>
-<p>点击”LAUNCH INSTALL WIZARD&rdquo;；</p>
+<p>点击”LAUNCH INSTALL WIZARD&quot;；</p>
 </li>
 <li>
 <p>输入集群名称，点击NEXT；</p>
 </li>
 <li>
-<p>上方的版本（HDP-3.1.4.0）保持不动，把下方的“Repositories”从“Use Public Repository&quot;切换到”Use Local Repository&rdquo;，然后在OS下找到“debian9”（其它的OS可以通过右侧的删除按钮删除），输入之前搭建的本地仓库的地址，将下图中的 <code>x.x.x.x</code> 修改为对应的IP或主机名，点击NEXT；</p>
+<p>上方的版本（HDP-3.1.4.0）保持不动，把下方的“Repositories”从“Use Public Repository&quot;切换到”Use Local Repository&quot;，然后在OS下找到“debian9”（其它的OS可以通过右侧的删除按钮删除），输入之前搭建的本地仓库的地址，将下图中的 <code>x.x.x.x</code> 修改为对应的IP或主机名，点击NEXT；</p>
 <p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8ioe9z6jjj311s04lmxl.jpg" alt=""></p>
 </li>
 <li>
@@ -577,9 +577,9 @@ sudo ambari-server stop
 
         
     <div class="updated-badge-container">
-        <span title="Updated @ 2020-11-11 20:58:59 CST" style="cursor:help">
+        <span title="Updated @ 2021-02-05 11:41:45 CST" style="cursor:help">
 
-<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-11-11</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-11-11</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-02-05</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-02-05</text></g></svg>
         </span></div>
 
 
@@ -845,7 +845,7 @@ sudo ambari-server stop
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.min.js" type="module" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js" type="module" defer></script>
 
 
 

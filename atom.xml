@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">I am a bug</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2021-02-05T11:50:34&#43;08:00</updated>
+    <updated>2021-02-05T14:59:59&#43;08:00</updated>
     <id>https://iamabug.github.io/</id>
     <link rel="alternate" type="text/html" href="https://iamabug.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://iamabug.github.io/atom.xml" />
@@ -15,12 +15,12 @@
                 <email>ChenChi.Tan.2020@gmail.com</email>
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
-    <generator uri="https://gohugo.io/" version="0.74.3">Hugo</generator>
+    <generator uri="https://gohugo.io/" version="0.80.0">Hugo</generator>
         <entry>
             <title type="text">深入浅出Spark Join</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/spark-join/" />
             <id>https://iamabug.github.io/posts/spark-join/</id>
-            <updated>2020-11-28T10:39:06&#43;08:00</updated>
+            <updated>2021-02-05T11:54:37&#43;08:00</updated>
             <published>2020-11-15T20:03:15&#43;08:00</published>
             <author>
                     <name>iamabug</name>
@@ -205,7 +205,7 @@
             <title type="text">过滤Spark数据集的四种方法</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2020-11-13-four-ways-to-filter-large-spark-dataset/" />
             <id>https://iamabug.github.io/posts/2020-11-13-four-ways-to-filter-large-spark-dataset/</id>
-            <updated>2020-11-16T20:29:55&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2020-11-13T11:01:33&#43;08:00</published>
             <author>
                     <name>iamabug</name>
@@ -332,7 +332,7 @@ age: Integer
             <title type="text">Kafka集群缩容实战</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2020-08-03-kafka-cluster-shrink/" />
             <id>https://iamabug.github.io/posts/2020-08-03-kafka-cluster-shrink/</id>
-            <updated>2020-11-11T20:55:50&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2020-08-03T14:53:16&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -688,7 +688,7 @@ log-start-offset-checkpoint  recovery-point-offset-checkpoint
             <title type="text">NameNode 文件系统相关数据结构初探</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2020-07-28-hdfs-core-data-structure/" />
             <id>https://iamabug.github.io/posts/2020-07-28-hdfs-core-data-structure/</id>
-            <updated>2020-11-11T20:55:50&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2020-07-28T08:48:20&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -1092,7 +1092,7 @@ log-start-offset-checkpoint  recovery-point-offset-checkpoint
             <title type="text">NameNode架构图解</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2020-07-22-minidfscluster-get-started/" />
             <id>https://iamabug.github.io/posts/2020-07-22-minidfscluster-get-started/</id>
-            <updated>2020-11-11T20:55:50&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2020-07-22T09:17:04&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -1420,7 +1420,7 @@ log-start-offset-checkpoint  recovery-point-offset-checkpoint
             <title type="text">一次Kafka性能调优</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2020-07-21-debug-kafka-gc/" />
             <id>https://iamabug.github.io/posts/2020-07-21-debug-kafka-gc/</id>
-            <updated>2020-11-15T20:07:21&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2020-07-21T10:13:45&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -1594,21 +1594,21 @@ $ sudo -u kafka bash -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;jstat xxx&amp;#3
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;指标&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Heap=1G&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Heap=6G&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;指标&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Heap=1G&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Heap=6G&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;5分钟内 YGC&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;491次&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;82 次&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5分钟内 YGC&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;491次&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;82 次&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;5分钟内 YGCT&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;5.30 秒&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1.22秒&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5分钟内 YGCT&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5.30 秒&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1.22秒&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1653,7 +1653,7 @@ $ sudo -u kafka bash -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;jstat xxx&amp;#3
             <title type="text">使用虚拟机搭建Hadoop开发调试环境</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2020-07-20-build-hadoop-dev-env/" />
             <id>https://iamabug.github.io/posts/2020-07-20-build-hadoop-dev-env/</id>
-            <updated>2020-11-11T20:55:50&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2020-07-20T10:48:34&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -2110,7 +2110,7 @@ dist-layout-stitching.sh  hadoop-2.7.0           hadoop-dist-2.7.0.jar  javadoc-
             <title type="text">命令行运行 MiniCluster</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2020-07-17-run-minidfscluster-from-cli/" />
             <id>https://iamabug.github.io/posts/2020-07-17-run-minidfscluster-from-cli/</id>
-            <updated>2020-11-11T20:55:50&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2020-07-17T08:58:07&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -2392,7 +2392,7 @@ $ bin/hadoop fs -put README.txt hdfs://localhost:8020/user/iamabug/input
             <title type="text">如何使用 filebeat 将日志输出到不同的 topic ？</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2020-01-16-kafka-note-04/" />
             <id>https://iamabug.github.io/posts/2020-01-16-kafka-note-04/</id>
-            <updated>2020-11-11T20:55:50&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2020-01-16T20:54:00&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -2442,22 +2442,22 @@ $ bin/hadoop fs -put README.txt hdfs://localhost:8020/user/iamabug/input
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;k&#34;&gt;filebeat.inputs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;k&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;log&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;enabled&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;paths&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;- /Users/iamabug/workspace/filebeat/test/&lt;span class=&#34;cp&#34;&gt;*.log&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;filebeat.inputs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;enabled&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;paths&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;/Users/iamabug/workspace/filebeat/test/*.log&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;   
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;output.kafka&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;enabled&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;hosts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;localhost:9092&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;codec.format&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;%{[message]}&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;topics&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;- &lt;span class=&#34;k&#34;&gt;topic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;error&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;when.contains.source&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;error&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;- &lt;span class=&#34;k&#34;&gt;topic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;info&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;when.contains.source&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;info&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;output.kafka&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;enabled&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;hosts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;localhost:9092&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;codec.format&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;%{[message]}&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;topics&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;topic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;error&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;when.contains.source&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;error&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;topic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;info&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;when.contains.source&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;info&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/li&gt;
@@ -2622,7 +2622,7 @@ output.kafka:
             <title type="text">如何使用 logstash 处理跨行日志？</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2020-01-15-kafka-note-03/" />
             <id>https://iamabug.github.io/posts/2020-01-15-kafka-note-03/</id>
-            <updated>2020-11-11T20:55:50&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2020-01-15T15:37:29&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -2781,7 +2781,7 @@ third exception
             <title type="text">如何使用 Flink 实现 at-least-once 的 Kafka2Kafka ？</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2020-01-15-flink-note-02/" />
             <id>https://iamabug.github.io/posts/2020-01-15-flink-note-02/</id>
-            <updated>2020-11-11T20:55:50&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2020-01-15T11:11:44&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -2970,7 +2970,7 @@ third exception
             <title type="text">如何使用 logstash 将日志处理成 JSON 格式？</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2020-01-14-kafka-note-02/" />
             <id>https://iamabug.github.io/posts/2020-01-14-kafka-note-02/</id>
-            <updated>2020-11-11T20:55:50&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2020-01-14T15:58:41&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -3137,7 +3137,7 @@ output &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
             <title type="text">如何使用 filebeat 的 dissect 模块预处理日志？</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2020-01-14-kafka-note-01/" />
             <id>https://iamabug.github.io/posts/2020-01-14-kafka-note-01/</id>
-            <updated>2020-11-11T20:55:50&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2020-01-14T07:06:59&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -3162,11 +3162,11 @@ output &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;k&#34;&gt;processors&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;- &lt;span class=&#34;k&#34;&gt;dissect&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;tokenizer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;%{key1} %{key2}&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;field&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;message&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;target_prefix&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;dissect&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;processors&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;dissect&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;tokenizer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;%{key1} %{key2}&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;field&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;message&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;target_prefix&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;dissect&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;如果日志内容是 &lt;code&gt;hello world&lt;/code&gt;，那么经过 &lt;code&gt;dissect&lt;/code&gt; 处理后，&lt;code&gt;dissect.key1&lt;/code&gt; 的值为 &lt;code&gt;hello&lt;/code&gt;，&lt;code&gt;dissect.key2&lt;/code&gt; 的值为 &lt;code&gt;world&lt;/code&gt;。变量默认都会带有 &lt;code&gt;dissect&lt;/code&gt; 前缀。&lt;/p&gt;
@@ -3195,24 +3195,24 @@ output &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;k&#34;&gt;filebeat.inputs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;k&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;log&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;enabled&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;paths&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;- /Users/iamabug/&lt;span class=&#34;m&#34;&gt;1.&lt;/span&gt;log&lt;span class=&#34;w&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;filebeat.inputs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;enabled&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;paths&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;/Users/iamabug/1.log&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;processors&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;k&#34;&gt;dissect&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;tokenizer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;[%{timestamp}] %{name} %{action}&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;field&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;message&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;processors&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;dissect&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;tokenizer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;[%{timestamp}] %{name} %{action}&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;field&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;message&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;output.kafka&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;enabled&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;2.0.0&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;topic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;hosts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;localhost:9092&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;codec.format&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;{&amp;#34;timestamp&amp;#34;: &amp;#34;%{[dissect.timestamp]}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;%{[dissect.name]}&amp;#34;, &amp;#34;action&amp;#34;: &amp;#34;%{[dissect.action]}&amp;#34;}&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;output.kafka&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;enabled&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;2.0.0&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;topic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;hosts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;localhost:9092&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;codec.format&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;{&amp;#34;timestamp&amp;#34;: &amp;#34;%{[dissect.timestamp]}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;%{[dissect.name]}&amp;#34;, &amp;#34;action&amp;#34;: &amp;#34;%{[dissect.action]}&amp;#34;}&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;注意，&lt;code&gt;tokenizer&lt;/code&gt; 的模式字符串有以下两个特点：&lt;/p&gt;
@@ -3330,7 +3330,7 @@ output &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
             <title type="text">如何使用 Flink 读取 Kafka 数据并打印在标准输出？</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2020-01-13-flink-note-01/" />
             <id>https://iamabug.github.io/posts/2020-01-13-flink-note-01/</id>
-            <updated>2020-11-11T20:55:50&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2020-01-13T20:12:08&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -3523,7 +3523,7 @@ output &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
             <title type="text">[Zeppelin] 如何配置、使用和调试local模式的Spark解释器</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2019-11-05-zeppelin-spark-interpreter/" />
             <id>https://iamabug.github.io/posts/2019-11-05-zeppelin-spark-interpreter/</id>
-            <updated>2020-11-11T21:49:03&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2019-11-05T07:27:38&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -3862,7 +3862,7 @@ $ cp ~/spark-2.4.4-bin-hadoop2.7/jars/netty-all-4.1.17.Final.jar lib/
             <title type="text">[Spark基础] 如何安装Spark和使用spark-shell</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2019-11-03-spark-get-started/" />
             <id>https://iamabug.github.io/posts/2019-11-03-spark-get-started/</id>
-            <updated>2020-11-11T20:58:59&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2019-11-03T13:46:18&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -4114,7 +4114,7 @@ Spark session available as &lt;span class=&#34;s1&#34;&gt;&amp;#39;spark&amp;#39
             <title type="text">Zeppelin的安装启动</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2019-11-02-zeppelin-101-introduction-and-installation/" />
             <id>https://iamabug.github.io/posts/2019-11-02-zeppelin-101-introduction-and-installation/</id>
-            <updated>2020-11-11T20:58:59&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2019-11-02T13:52:00&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -4268,7 +4268,7 @@ bin/zeppelin-daemon.sh start
             <title type="text">Kafka如何配置域名并同时支持内外网访问</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2019-11-01-two-listeners-in-kafka/" />
             <id>https://iamabug.github.io/posts/2019-11-01-two-listeners-in-kafka/</id>
-            <updated>2020-11-11T20:58:59&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2019-11-01T21:39:13&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -4305,7 +4305,7 @@ bin/zeppelin-daemon.sh start
             <title type="text">从零使用本地仓库安装Ambari</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2019-11-01-ambari-installation/" />
             <id>https://iamabug.github.io/posts/2019-11-01-ambari-installation/</id>
-            <updated>2020-11-11T20:58:59&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2019-11-01T20:25:59&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -4555,13 +4555,13 @@ sudo ambari-server stop
 &lt;p&gt;接下来的操作都在浏览器中完成，&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;点击”LAUNCH INSTALL WIZARD&amp;rdquo;；&lt;/p&gt;
+&lt;p&gt;点击”LAUNCH INSTALL WIZARD&amp;quot;；&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;输入集群名称，点击NEXT；&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;上方的版本（HDP-3.1.4.0）保持不动，把下方的“Repositories”从“Use Public Repository&amp;quot;切换到”Use Local Repository&amp;rdquo;，然后在OS下找到“debian9”（其它的OS可以通过右侧的删除按钮删除），输入之前搭建的本地仓库的地址，将下图中的 &lt;code&gt;x.x.x.x&lt;/code&gt; 修改为对应的IP或主机名，点击NEXT；&lt;/p&gt;
+&lt;p&gt;上方的版本（HDP-3.1.4.0）保持不动，把下方的“Repositories”从“Use Public Repository&amp;quot;切换到”Use Local Repository&amp;quot;，然后在OS下找到“debian9”（其它的OS可以通过右侧的删除按钮删除），输入之前搭建的本地仓库的地址，将下图中的 &lt;code&gt;x.x.x.x&lt;/code&gt; 修改为对应的IP或主机名，点击NEXT；&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/006y8mN6ly1g8ioe9z6jjj311s04lmxl.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -4634,7 +4634,7 @@ sudo ambari-server stop
             <title type="text">[kafka-101-2] 使用Java API生产数据</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2019-10-31-kafka-101-basic-producer-api/" />
             <id>https://iamabug.github.io/posts/2019-10-31-kafka-101-basic-producer-api/</id>
-            <updated>2020-11-11T20:58:59&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2019-10-31T21:34:21&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -4954,7 +4954,7 @@ sudo ambari-server stop
             <title type="text">使用Java API连接Apache Sentry</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2019-10-30-sentry-java-api/" />
             <id>https://iamabug.github.io/posts/2019-10-30-sentry-java-api/</id>
-            <updated>2020-11-11T20:58:59&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2019-10-30T20:51:58&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -5102,7 +5102,7 @@ sudo ambari-server stop
             <title type="text">[Kafka 101-0] Kafka简介</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2019-10-29-kafka-101-introduction/" />
             <id>https://iamabug.github.io/posts/2019-10-29-kafka-101-introduction/</id>
-            <updated>2020-11-11T20:58:59&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2019-10-29T09:02:24&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -5171,7 +5171,7 @@ sudo ambari-server stop
             <title type="text">[Kafka 101-1] Kafka安装使用</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2019-10-28-kafka-101-install-kafka/" />
             <id>https://iamabug.github.io/posts/2019-10-28-kafka-101-install-kafka/</id>
-            <updated>2020-11-11T20:58:59&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2019-10-28T08:02:24&#43;00:00</published>
             <author>
                     <name>iamabug</name>
@@ -5425,7 +5425,7 @@ $ kafka-topics.sh --list --bootstrap-server localhost:9092
             <title type="text">Kafka SASL/PLAIN认证插件</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/2019-10-21-kafka-sasl-plain-plugin/" />
             <id>https://iamabug.github.io/posts/2019-10-21-kafka-sasl-plain-plugin/</id>
-            <updated>2020-11-11T22:03:17&#43;08:00</updated>
+            <updated>2021-02-05T11:41:45&#43;08:00</updated>
             <published>2019-10-21T20:56:09&#43;00:00</published>
             <author>
                     <name>iamabug</name>

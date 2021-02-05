@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8" />
 
-    <meta name="generator" content="Hugo 0.74.3" /><meta name="theme-color" content="#fff" />
+    <meta name="generator" content="Hugo 0.80.0" /><meta name="theme-color" content="#fff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
@@ -14,11 +14,11 @@
 
     <title>如何使用 filebeat 的 dissect 模块预处理日志？ | I am a bug</title>
 
-    <link rel="stylesheet" href="/css/meme.min.e685eb049848bc709aa924591f0fe0f45ef392692ee87c638a5ed3c5d477c430.css"/>
+    <link rel="stylesheet" href="/css/meme.min.0c523bc1eddfee4197176f113aeaf4cbddf87cfc7010b5c3770a538f85279798.css"/>
 
     
     
-        <script src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js" defer></script><script src="/js/meme.min.d87f73b7872170ab5ce203318fce5457faeaacca4b59fe88a90b866fb9c3aa34.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" defer></script><script src="/js/meme.min.957c5405455643a3146b774cee819d0907699e002e75b5a4815a7bdc8064460c.js"></script>
 
     
 
@@ -34,7 +34,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="I am a bug" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="application-name" content="I am a bug" />
     <meta name="msapplication-starturl" content="../../" />
@@ -54,7 +54,7 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2020-01-14T07:06:59+00:00",
-        "dateModified": "2020-11-11T20:55:50+08:00",
+        "dateModified": "2021-02-05T11:41:45+08:00",
         "url": "https://iamabug.github.io/posts/2020-01-14-kafka-note-01/",
         "headline": "如何使用 filebeat 的 dissect 模块预处理日志？",
         "description": "问题 使用 filebeat 发送日志内容到 Kafka，然后使用 Flink 对日志进行解析，但 Flink 解析日志的代码对日志格式有要求，而日志是由第三方代码产生的，不方便直接修改，因此想要通过 filebeat 在发送日志到 Kafka 之前对日志进行修改，使其符合预期的格式。 思路 参考链接：https://www.elastic.co/guide/en/beats/filebeat/current/dissect.html#…",
@@ -104,7 +104,7 @@
 <meta property="og:locale" content="en" /><meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1gavp3bg8syj310z0310tc.jpg" />
 <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2020-01-14T07:06:59&#43;00:00" />
-    <meta property="article:modified_time" content="2020-11-11T20:55:50&#43;08:00" />
+    <meta property="article:modified_time" content="2021-02-05T11:41:45&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -253,7 +253,7 @@
     
     
         
-        <time datetime="2020-11-11T20:55:50&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2020.11.11</time>
+        <time datetime="2021-02-05T11:41:45&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2021.2.5</time>
     
     
     
@@ -301,11 +301,11 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">processors</span><span class="p">:</span><span class="w">
-</span><span class="w"></span>- <span class="k">dissect</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">tokenizer</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;%{key1} %{key2}&#34;</span><span class="w">
-</span><span class="w">    </span><span class="k">field</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;message&#34;</span><span class="w">
-</span><span class="w">    </span><span class="k">target_prefix</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;dissect&#34;</span><span class="w">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">processors</span><span class="p">:</span><span class="w">
+</span><span class="w"></span>- <span class="nt">dissect</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">tokenizer</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;%{key1} %{key2}&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;message&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">target_prefix</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;dissect&#34;</span><span class="w">
 </span></code></pre></td></tr></table></div>
 </div>
 </div><p>如果日志内容是 <code>hello world</code>，那么经过 <code>dissect</code> 处理后，<code>dissect.key1</code> 的值为 <code>hello</code>，<code>dissect.key2</code> 的值为 <code>world</code>。变量默认都会带有 <code>dissect</code> 前缀。</p>
@@ -334,24 +334,24 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">filebeat.inputs</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span>- <span class="k">type</span><span class="p">:</span><span class="w"> </span>log<span class="w">
-</span><span class="w">      </span><span class="k">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="w">      </span><span class="k">paths</span><span class="p">:</span><span class="w">
-</span><span class="w">          </span>- /Users/iamabug/<span class="m">1.</span>log<span class="w">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">filebeat.inputs</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">log</span><span class="w">
+</span><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">      </span><span class="nt">paths</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- <span class="l">/Users/iamabug/1.log</span><span class="w">
 </span><span class="w">
-</span><span class="w"></span><span class="k">processors</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span>- <span class="k">dissect</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="k">tokenizer</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;[%{timestamp}] %{name} %{action}&#34;</span><span class="w">
-</span><span class="w">        </span><span class="k">field</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;message&#34;</span><span class="w">
+</span><span class="w"></span><span class="nt">processors</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">dissect</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">tokenizer</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;[%{timestamp}] %{name} %{action}&#34;</span><span class="w">
+</span><span class="w">        </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;message&#34;</span><span class="w">
 </span><span class="w">
-</span><span class="w"></span><span class="k">output.kafka</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="w">    </span><span class="k">version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;2.0.0&#34;</span><span class="w">
-</span><span class="w">    </span><span class="k">topic</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;test&#34;</span><span class="w">
-</span><span class="w">    </span><span class="k">hosts</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;localhost:9092&#34;</span><span class="p">]</span><span class="w">
-</span><span class="w">    </span><span class="k">codec.format</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="k">string</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{&#34;timestamp&#34;: &#34;%{[dissect.timestamp]}&#34;, &#34;name&#34;: &#34;%{[dissect.name]}&#34;, &#34;action&#34;: &#34;%{[dissect.action]}&#34;}&#39;</span><span class="w">
+</span><span class="w"></span><span class="nt">output.kafka</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;2.0.0&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">topic</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;test&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;localhost:9092&#34;</span><span class="p">]</span><span class="w">
+</span><span class="w">    </span><span class="nt">codec.format</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">string</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{&#34;timestamp&#34;: &#34;%{[dissect.timestamp]}&#34;, &#34;name&#34;: &#34;%{[dissect.name]}&#34;, &#34;action&#34;: &#34;%{[dissect.action]}&#34;}&#39;</span><span class="w">
 </span></code></pre></td></tr></table></div>
 </div>
 </div><p>注意，<code>tokenizer</code> 的模式字符串有以下两个特点：</p>
@@ -441,9 +441,9 @@
 
         
     <div class="updated-badge-container">
-        <span title="Updated @ 2020-11-11 20:55:50 CST" style="cursor:help">
+        <span title="Updated @ 2021-02-05 11:41:45 CST" style="cursor:help">
 
-<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-11-11</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-11-11</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-02-05</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-02-05</text></g></svg>
         </span></div>
 
 
@@ -721,7 +721,7 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.min.js" type="module" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js" type="module" defer></script>
 
 
 
