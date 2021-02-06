@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">I am a bug</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2021-02-05T15:08:17&#43;08:00</updated>
+    <updated>2021-02-06T16:06:22&#43;08:00</updated>
     <id>https://iamabug.github.io/</id>
     <link rel="alternate" type="text/html" href="https://iamabug.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://iamabug.github.io/atom.xml" />
@@ -16,6 +16,354 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
     <generator uri="https://gohugo.io/" version="0.80.0">Hugo</generator>
+        <entry>
+            <title type="text">基于Docker的大数据开发环境 - HDP Sandbox</title>
+            <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/hdp-sandbox-trial/" />
+            <id>https://iamabug.github.io/posts/hdp-sandbox-trial/</id>
+            <updated>2021-02-06T16:04:52&#43;08:00</updated>
+            <published>2021-02-05T15:15:48&#43;08:00</published>
+            <author>
+                    <name>iamabug</name>
+                    <uri>https://iamabug.github.io/</uri>
+                    <email>ChenChi.Tan.2020@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">大数据开发对运行环境和数据的依赖比较重，比如开发Spark应用，往往会依赖Hive，但本地开发环境是没有Hive的，所以需要在本地和服务器之间拷贝代码，效率不高，我认为用Docker在本地搭建一套单机的大数据集群，然后将代码拷贝到容器里进行测试，可以改善这种情况。我自己对这个思路做过探索：https://github.com/iamabug/BigDataP…</summary>
+            
+                <content type="html">&lt;p&gt;大数据开发对运行环境和数据的依赖比较重，比如开发Spark应用，往往会依赖Hive，但本地开发环境是没有Hive的，所以需要在本地和服务器之间拷贝代码，效率不高，我认为用Docker在本地搭建一套单机的大数据集群，然后将代码拷贝到容器里进行测试，可以改善这种情况。我自己对这个思路做过探索：https://github.com/iamabug/BigDataParty，这个镜像安装了Hadoop、Hive、Spark等组件，基本可以满足需求，但是也有一些问题存在，比如有时需要对配置进行调整来保持和生产环境的一致性，虽然可以做，但工作量也不少。&lt;/p&gt;
+&lt;p&gt;其实，CDH和HDP都提供了类似的单机镜像，其中HDP中组件的版本比较新，并且和公司的技术栈一致，因此来探索一下，如果体验更好的话，以后就用它来进行相关的开发了。&lt;/p&gt;
+&lt;p&gt;CDH镜像相关：https://hub.docker.com/r/cloudera/quickstart/&lt;/p&gt;
+&lt;p&gt;HDP镜像相关：https://www.cloudera.com/tutorials/sandbox-deployment-and-install-guide/3.html&lt;/p&gt;
+&lt;h1 id=&#34;sandbox获取&#34;&gt;Sandbox获取&lt;/h1&gt;
+&lt;h2 id=&#34;系统要求&#34;&gt;系统要求&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;安装Docker 17.09 或更新的版本&lt;/li&gt;
+&lt;li&gt;对于Windows和Mac，Docker需要配置10G以上的内存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;脚本下载与执行&#34;&gt;脚本下载与执行&lt;/h2&gt;
+&lt;p&gt;可以在浏览器里访问https://www.cloudera.com/downloads/hortonworks-sandbox/hdp.html点击页面下载，也可以直接在命令行用wget下载：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ wget --no-check-certificate https://archive.cloudera.com/hwx-sandbox/hdp/hdp-3.0.1/HDP_3.0.1_docker-deploy-scripts_18120587fc7fb.zip
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;解压并执行脚本：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ unzip HDP_3.0.1_docker-deploy-scripts_18120587fc7fb.zip
+Archive:  HDP_3.0.1_docker-deploy-scripts_18120587fc7fb.zip
+   creating: assets/
+  inflating: assets/generate-proxy-deploy-script.sh
+  inflating: assets/nginx.conf
+  inflating: docker-deploy-hdp30.sh
+$ sh docker-deploy-hdp30.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;执行后会开始拉取docker镜像，需要下载几十G的数据，需要耐心等待。&lt;/p&gt;
+&lt;h1 id=&#34;sandbox验证&#34;&gt;Sandbox验证&lt;/h1&gt;
+&lt;p&gt;脚本执行完毕后，使用 &lt;code&gt;docker ps&lt;/code&gt;可以看到启动了两个容器：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;CONTAINER ID        IMAGE                           COMMAND                  CREATED             STATUS              PORTS                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            NAMES
+daf0f397ff6c        hortonworks/sandbox-proxy:1.0   &lt;span class=&#34;s2&#34;&gt;&amp;#34;nginx -g &amp;#39;daemon of…&amp;#34;&lt;/span&gt;   About an hour ago   Up About an hour    0.0.0.0:1080-&amp;gt;1080/tcp, ...
+b925f92f368d        hortonworks/sandbox-hdp:3.0.1   &lt;span class=&#34;s2&#34;&gt;&amp;#34;/usr/sbin/init&amp;#34;&lt;/span&gt;         About an hour ago   Up About an hour    22/tcp, 4200/tcp, 8080/tcp
+sandbox-hdp
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;其中 &lt;code&gt;sandbox-proxy&lt;/code&gt; 这个容器先忽略，关注 &lt;code&gt;sandbox-hdp&lt;/code&gt; 这个就可以，这时所有HDP的组件都已经启动了。&lt;/p&gt;
+&lt;h2 id=&#34;ui验证&#34;&gt;UI验证&lt;/h2&gt;
+&lt;p&gt;因为已经做了端口映射，如果要访问特定的UI，直接访问localhost对应的端口就可以，可以先访问 &lt;code&gt;localhost:1080&lt;/code&gt;的Splash页面：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/008eGmZEgy1gndtndzednj31px0u00up.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这里提供了向导，点击左边的Launch Dashboard可以打开Ambari登陆页面和HDP的Tutorial页面，点击右边的Quick Links会打开下一级向导，包含Ambari、Zeppelin、Atlas、Ranger等组件的跳转链接：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/008eGmZEgy1gndtsc3gltj31he0u075a.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;其中Ambari的登陆密码可以参考https://www.cloudera.com/tutorials/learning-the-ropes-of-the-hdp-sandbox.html这个页面获取，根据不同用途可以选择不同的用户：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;用户&lt;/th&gt;
+&lt;th&gt;角色&lt;/th&gt;
+&lt;th&gt;密码&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;admin&lt;/td&gt;
+&lt;td&gt;Ambari Admin&lt;/td&gt;
+&lt;td&gt;使用&lt;code&gt;ambari-admin-password-reset&lt;/code&gt;命令初始化获得&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;maria_dev&lt;/td&gt;
+&lt;td&gt;Spark and SQL Developer&lt;/td&gt;
+&lt;td&gt;maria_dev&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;raj_ops&lt;/td&gt;
+&lt;td&gt;Hadoop Warehouse Operator&lt;/td&gt;
+&lt;td&gt;raj_ops&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;holger_gov&lt;/td&gt;
+&lt;td&gt;Data Steward&lt;/td&gt;
+&lt;td&gt;holger_gov&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;amy_ds&lt;/td&gt;
+&lt;td&gt;Data Scientist&lt;/td&gt;
+&lt;td&gt;amy_ds&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Web UI的情况读者可以自行一一验证，下面来验证一下底层的存储和计算情况。&lt;/p&gt;
+&lt;h2 id=&#34;功能验证&#34;&gt;功能验证&lt;/h2&gt;
+&lt;p&gt;命令行进入容器：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; -it sandbox-hdp bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;hdfs验证&#34;&gt;HDFS验证&lt;/h3&gt;
+&lt;p&gt;简单的ls一下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@sandbox-hdp /&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# hdfs dfs -ls /&lt;/span&gt;
+Found &lt;span class=&#34;m&#34;&gt;13&lt;/span&gt; items
+drwxrwxrwt   - yarn   hadoop          &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 2018-11-29 17:56 /app-logs
+drwxr-xr-x   - hdfs   hdfs            &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 2018-11-29 19:01 /apps
+drwxr-xr-x   - yarn   hadoop          &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 2018-11-29 17:25 /ats
+drwxr-xr-x   - hdfs   hdfs            &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 2018-11-29 17:26 /atsv2
+drwxr-xr-x   - hdfs   hdfs            &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 2018-11-29 17:26 /hdp
+drwx------   - livy   hdfs            &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 2018-11-29 17:55 /livy2-recovery
+drwxr-xr-x   - mapred hdfs            &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 2018-11-29 17:26 /mapred
+drwxrwxrwx   - mapred hadoop          &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 2018-11-29 17:26 /mr-history
+drwxr-xr-x   - hdfs   hdfs            &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 2018-11-29 18:54 /ranger
+drwxrwxrwx   - spark  hadoop          &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 2021-02-06 07:19 /spark2-history
+drwxrwxrwx   - hdfs   hdfs            &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 2018-11-29 19:01 /tmp
+drwxr-xr-x   - hdfs   hdfs            &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 2018-11-29 19:21 /user
+drwxr-xr-x   - hdfs   hdfs            &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 2018-11-29 17:51 /warehouse
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;hive验证&#34;&gt;Hive验证&lt;/h3&gt;
+&lt;p&gt;Sandbox里已经内置了一些测试数据，select一下即可。&lt;/p&gt;
+&lt;p&gt;首先启动hive命令行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@sandbox-hdp /&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# hive&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;查看有哪些数据库：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;0: jdbc:hive2://sandbox-hdp.hortonworks.com:2&amp;gt; show databases&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
++---------------------+
+&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;    database_name    &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
++---------------------+
+&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; default             &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; foodmart            &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; information_schema  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sys                 &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
++---------------------+
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;选择foodmart，再查看有哪些表：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;0: jdbc:hive2://sandbox-hdp.hortonworks.com:2&amp;gt; use foodmart&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+0: jdbc:hive2://sandbox-hdp.hortonworks.com:2&amp;gt; show tables&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
++--------------------------------+
+&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;            tab_name            &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
++--------------------------------+
+&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; account                        &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; ...                            &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
++--------------------------------+
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;可以看到有很多表，我们就选择account这张表：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;0: jdbc:hive2://sandbox-hdp.hortonworks.com:2&amp;gt; &lt;span class=&#34;k&#34;&gt;select&lt;/span&gt; * from account limit 1&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
++---------------------+-------------------------+------------------------------+-----------------------+-------------------------+-------------------------+
+&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; account.account_id  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; account.account_parent  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; account.account_description  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; account.account_type  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; account.account_rollup  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; account.custom_members  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
++---------------------+-------------------------+------------------------------+-----------------------+-------------------------+-------------------------+
+&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1000&lt;/span&gt;                &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; NULL                    &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; Assets                       &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; Asset                 &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; ~                       &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;                         &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
++---------------------+-------------------------+------------------------------+-----------------------+-------------------------+-------------------------+
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;非常OK。&lt;/p&gt;
+&lt;h3 id=&#34;spark验证&#34;&gt;Spark验证&lt;/h3&gt;
+&lt;p&gt;启动spark-sql后查询account表：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;spark-sql&amp;gt; &lt;span class=&#34;k&#34;&gt;select&lt;/span&gt; * from foodmart.account limit 1&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+Error in query: Table or view not found: &lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;foodmart&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;.&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;account&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; line &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; pos 14&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;s1&#34;&gt;&amp;#39;GlobalLimit 1
+&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;+- &amp;#39;&lt;/span&gt;LocalLimit &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+   +- &lt;span class=&#34;s1&#34;&gt;&amp;#39;Project [*]
+&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;      +- &amp;#39;&lt;/span&gt;UnresolvedRelation &lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;foodmart&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;.&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;account&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;奇怪&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;spark-sql&amp;gt; show databases&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+default
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;只有default库。&lt;/p&gt;
+&lt;p&gt;做了一些搜索，发现貌似在HDP 3.0之后，Spark访问Hive表发生了大的变化，Spark的验证还需要进一步研究。&lt;/p&gt;
+&lt;h1 id=&#34;sandbox管理&#34;&gt;Sandbox管理&lt;/h1&gt;
+&lt;h2 id=&#34;停止sandbox&#34;&gt;停止Sandbox&lt;/h2&gt;
+&lt;p&gt;使用&lt;code&gt;docker stop&lt;/code&gt;命令即可：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker stop sandbox-hdp
+docker stop sandbox-proxy
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;重启sandbox&#34;&gt;重启Sandbox&lt;/h2&gt;
+&lt;p&gt;使用&lt;code&gt;docker start&lt;/code&gt;命令即可：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker start sandbox-hdp
+docker start sandbox-proxy
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;清理sandbox&#34;&gt;清理Sandbox&lt;/h2&gt;
+&lt;p&gt;先stop再remove：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker stop sandbox-hdp
+docker stop sandbox-proxy
+docker rm sandbox-hdp
+docker rm sandbox-proxy
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果要删除镜像的话：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker rmi hortonworks/sandbox-hdp:3.0.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id=&#34;总结&#34;&gt;总结&lt;/h1&gt;
+&lt;p&gt;HDP Sandbox的启动非常方便，和文档没有出入，体验较好，大概率可以取代BigDataParty项目，继续试用和学习。&lt;/p&gt;
+&lt;h1 id=&#34;参考链接&#34;&gt;参考链接&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cloudera.com/tutorials/sandbox-deployment-and-install-guide/3.html&#34;&gt;https://www.cloudera.com/tutorials/sandbox-deployment-and-install-guide/3.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cloudera.com/tutorials/learning-the-ropes-of-the-hdp-sandbox.html&#34;&gt;https://www.cloudera.com/tutorials/learning-the-ropes-of-the-hdp-sandbox.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">深入浅出Spark Join</title>
             <link rel="alternate" type="text/html" href="https://iamabug.github.io/posts/spark-join/" />

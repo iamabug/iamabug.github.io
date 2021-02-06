@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://iamabug.github.io/categories/</loc>
-    <lastmod>2021-02-05T11:54:37+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://iamabug.github.io/</loc>
-    <lastmod>2021-02-05T11:54:37+08:00</lastmod>
+    <lastmod>2021-02-06T16:04:52+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://iamabug.github.io/posts/</loc>
+    <lastmod>2021-02-06T16:04:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://iamabug.github.io/posts/hdp-sandbox-trial/</loc>
+    <lastmod>2021-02-06T16:04:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://iamabug.github.io/categories/</loc>
     <lastmod>2021-02-05T11:54:37+08:00</lastmod>
   </url>
   
