@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kafka的基础安装使用 - 我是个bug</title><link>https://iamabug.github.io/kafka/install/index.html</link><description>打开Kafka官网的quickstart页面：https://kafka.apache.org/quickstart，边读边照做，不理解的去搜索。
+0. 确认Java环境 如果没有安装Java环境，可以参考Java环境安装
+1. 下载Kafka 可以从页面上下载，也可以用 wget：
+$ wget https://dlcdn.apache.org/kafka/3.8.0/kafka_2.13-3.8.0.tgz 下载之后解压到合适位置：
+$ tar xvf kafka_2.13-3.8.0.tgz $ pwd /home/iamabug/workspace 2. 启动Kafka 官网上给出了四种启动方式，分别是：
+KRaft Zookeeper 基于JVM的docker镜像 基于GraalVM的docker镜像 出于实用性考虑，目前只关注前两种方式。
+2.1 KRaft方式启动 简单的来说，KRaft移除了Zookeeper，将元信息的管理放在集群内，简化了系统架构，在稳定性、安全性等方便带来好处。
+$ pwd /home/iamabug/workspace/kafka_2.13-3.8.0 # 生成一个集群ID，用于Kraft一致性协议，如果不需要一个有意义的集群ID，可以用自带工具随机生成 $ KAFKA_CLUSTER_ID=mycluster $ KAFKA_CLUSTER_ID="$(bin/kafka-storage.sh random-uuid)" $k echo $KAFKA_CLUSTER_ID 2e2c8L1FTeSbJSqTq8ISeQ 然后格式化日志目录:
+$ bin/kafka-storage.sh format -t $KAFKA_CLUSTER_ID -c config/kraft/server.properties Formatting /tmp/kraft-combined-logs with metadata.version 3.8-IV0. 可以看到这一步的作用是根据配置文件初始化了/tmp/kraft-combined-logs目录，查看目录下的文件内容：
+$ ls /tmp/kraft-combined-logs/ bootstrap.checkpoint meta.properties ## bootstrap.checkpoint不是可读文件，查看meta.properties $ cat /tmp/kraft-combined-logs/meta.properties # #Fri Oct 18 14:35:45 CST 2024 cluster.id=mycluster version=1 directory.id=Mo0S_N719s7Tw_GVSKS9Vw node.id=1 注释 [TODO] 这里产生个问题，这一步初始化是所有的broker都需要，还是只有controller才需要？</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate/><atom:link href="https://iamabug.github.io/kafka/install/index.xml" rel="self" type="application/rss+xml"/></channel></rss>

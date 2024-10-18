@@ -1,0 +1,111 @@
+<!doctype html><html lang=zh-cn dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.136.2"><meta name=generator content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619"><meta name=description content='打开Kafka官网的quickstart页面：https://kafka.apache.org/quickstart，边读边照做，不理解的去搜索。
+0. 确认Java环境 如果没有安装Java环境，可以参考Java环境安装
+1. 下载Kafka 可以从页面上下载，也可以用 wget：
+$ wget https://dlcdn.apache.org/kafka/3.8.0/kafka_2.13-3.8.0.tgz 下载之后解压到合适位置：
+$ tar xvf kafka_2.13-3.8.0.tgz $ pwd /home/iamabug/workspace 2. 启动Kafka 官网上给出了四种启动方式，分别是：
+KRaft Zookeeper 基于JVM的docker镜像 基于GraalVM的docker镜像 出于实用性考虑，目前只关注前两种方式。
+2.1 KRaft方式启动 简单的来说，KRaft移除了Zookeeper，将元信息的管理放在集群内，简化了系统架构，在稳定性、安全性等方便带来好处。
+$ pwd /home/iamabug/workspace/kafka_2.13-3.8.0 # 生成一个集群ID，用于Kraft一致性协议，如果不需要一个有意义的集群ID，可以用自带工具随机生成 $ KAFKA_CLUSTER_ID=mycluster $ KAFKA_CLUSTER_ID="$(bin/kafka-storage.sh random-uuid)" $k echo $KAFKA_CLUSTER_ID 2e2c8L1FTeSbJSqTq8ISeQ 然后格式化日志目录:
+$ bin/kafka-storage.sh format -t $KAFKA_CLUSTER_ID -c config/kraft/server.properties Formatting /tmp/kraft-combined-logs with metadata.version 3.8-IV0. 可以看到这一步的作用是根据配置文件初始化了/tmp/kraft-combined-logs目录，查看目录下的文件内容：
+$ ls /tmp/kraft-combined-logs/ bootstrap.checkpoint meta.properties ## bootstrap.checkpoint不是可读文件，查看meta.properties $ cat /tmp/kraft-combined-logs/meta.properties # #Fri Oct 18 14:35:45 CST 2024 cluster.id=mycluster version=1 directory.id=Mo0S_N719s7Tw_GVSKS9Vw node.id=1 注释 [TODO] 这里产生个问题，这一步初始化是所有的broker都需要，还是只有controller才需要？'><meta name=author content="iamabug"><meta name=twitter:card content="summary"><meta name=twitter:title content="Kafka的基础安装使用 - 我是个bug"><meta name=twitter:description content='打开Kafka官网的quickstart页面：https://kafka.apache.org/quickstart，边读边照做，不理解的去搜索。
+0. 确认Java环境 如果没有安装Java环境，可以参考Java环境安装
+1. 下载Kafka 可以从页面上下载，也可以用 wget：
+$ wget https://dlcdn.apache.org/kafka/3.8.0/kafka_2.13-3.8.0.tgz 下载之后解压到合适位置：
+$ tar xvf kafka_2.13-3.8.0.tgz $ pwd /home/iamabug/workspace 2. 启动Kafka 官网上给出了四种启动方式，分别是：
+KRaft Zookeeper 基于JVM的docker镜像 基于GraalVM的docker镜像 出于实用性考虑，目前只关注前两种方式。
+2.1 KRaft方式启动 简单的来说，KRaft移除了Zookeeper，将元信息的管理放在集群内，简化了系统架构，在稳定性、安全性等方便带来好处。
+$ pwd /home/iamabug/workspace/kafka_2.13-3.8.0 # 生成一个集群ID，用于Kraft一致性协议，如果不需要一个有意义的集群ID，可以用自带工具随机生成 $ KAFKA_CLUSTER_ID=mycluster $ KAFKA_CLUSTER_ID="$(bin/kafka-storage.sh random-uuid)" $k echo $KAFKA_CLUSTER_ID 2e2c8L1FTeSbJSqTq8ISeQ 然后格式化日志目录:
+$ bin/kafka-storage.sh format -t $KAFKA_CLUSTER_ID -c config/kraft/server.properties Formatting /tmp/kraft-combined-logs with metadata.version 3.8-IV0. 可以看到这一步的作用是根据配置文件初始化了/tmp/kraft-combined-logs目录，查看目录下的文件内容：
+$ ls /tmp/kraft-combined-logs/ bootstrap.checkpoint meta.properties ## bootstrap.checkpoint不是可读文件，查看meta.properties $ cat /tmp/kraft-combined-logs/meta.properties # #Fri Oct 18 14:35:45 CST 2024 cluster.id=mycluster version=1 directory.id=Mo0S_N719s7Tw_GVSKS9Vw node.id=1 注释 [TODO] 这里产生个问题，这一步初始化是所有的broker都需要，还是只有controller才需要？'><meta property="og:url" content="https://iamabug.github.io/kafka/install/index.html"><meta property="og:site_name" content="我是个bug"><meta property="og:title" content="Kafka的基础安装使用 - 我是个bug"><meta property="og:description" content='打开Kafka官网的quickstart页面：https://kafka.apache.org/quickstart，边读边照做，不理解的去搜索。
+0. 确认Java环境 如果没有安装Java环境，可以参考Java环境安装
+1. 下载Kafka 可以从页面上下载，也可以用 wget：
+$ wget https://dlcdn.apache.org/kafka/3.8.0/kafka_2.13-3.8.0.tgz 下载之后解压到合适位置：
+$ tar xvf kafka_2.13-3.8.0.tgz $ pwd /home/iamabug/workspace 2. 启动Kafka 官网上给出了四种启动方式，分别是：
+KRaft Zookeeper 基于JVM的docker镜像 基于GraalVM的docker镜像 出于实用性考虑，目前只关注前两种方式。
+2.1 KRaft方式启动 简单的来说，KRaft移除了Zookeeper，将元信息的管理放在集群内，简化了系统架构，在稳定性、安全性等方便带来好处。
+$ pwd /home/iamabug/workspace/kafka_2.13-3.8.0 # 生成一个集群ID，用于Kraft一致性协议，如果不需要一个有意义的集群ID，可以用自带工具随机生成 $ KAFKA_CLUSTER_ID=mycluster $ KAFKA_CLUSTER_ID="$(bin/kafka-storage.sh random-uuid)" $k echo $KAFKA_CLUSTER_ID 2e2c8L1FTeSbJSqTq8ISeQ 然后格式化日志目录:
+$ bin/kafka-storage.sh format -t $KAFKA_CLUSTER_ID -c config/kraft/server.properties Formatting /tmp/kraft-combined-logs with metadata.version 3.8-IV0. 可以看到这一步的作用是根据配置文件初始化了/tmp/kraft-combined-logs目录，查看目录下的文件内容：
+$ ls /tmp/kraft-combined-logs/ bootstrap.checkpoint meta.properties ## bootstrap.checkpoint不是可读文件，查看meta.properties $ cat /tmp/kraft-combined-logs/meta.properties # #Fri Oct 18 14:35:45 CST 2024 cluster.id=mycluster version=1 directory.id=Mo0S_N719s7Tw_GVSKS9Vw node.id=1 注释 [TODO] 这里产生个问题，这一步初始化是所有的broker都需要，还是只有controller才需要？'><meta property="og:locale" content="zh_cn"><meta property="og:type" content="website"><meta itemprop=name content="Kafka的基础安装使用 - 我是个bug"><meta itemprop=description content='打开Kafka官网的quickstart页面：https://kafka.apache.org/quickstart，边读边照做，不理解的去搜索。
+0. 确认Java环境 如果没有安装Java环境，可以参考Java环境安装
+1. 下载Kafka 可以从页面上下载，也可以用 wget：
+$ wget https://dlcdn.apache.org/kafka/3.8.0/kafka_2.13-3.8.0.tgz 下载之后解压到合适位置：
+$ tar xvf kafka_2.13-3.8.0.tgz $ pwd /home/iamabug/workspace 2. 启动Kafka 官网上给出了四种启动方式，分别是：
+KRaft Zookeeper 基于JVM的docker镜像 基于GraalVM的docker镜像 出于实用性考虑，目前只关注前两种方式。
+2.1 KRaft方式启动 简单的来说，KRaft移除了Zookeeper，将元信息的管理放在集群内，简化了系统架构，在稳定性、安全性等方便带来好处。
+$ pwd /home/iamabug/workspace/kafka_2.13-3.8.0 # 生成一个集群ID，用于Kraft一致性协议，如果不需要一个有意义的集群ID，可以用自带工具随机生成 $ KAFKA_CLUSTER_ID=mycluster $ KAFKA_CLUSTER_ID="$(bin/kafka-storage.sh random-uuid)" $k echo $KAFKA_CLUSTER_ID 2e2c8L1FTeSbJSqTq8ISeQ 然后格式化日志目录:
+$ bin/kafka-storage.sh format -t $KAFKA_CLUSTER_ID -c config/kraft/server.properties Formatting /tmp/kraft-combined-logs with metadata.version 3.8-IV0. 可以看到这一步的作用是根据配置文件初始化了/tmp/kraft-combined-logs目录，查看目录下的文件内容：
+$ ls /tmp/kraft-combined-logs/ bootstrap.checkpoint meta.properties ## bootstrap.checkpoint不是可读文件，查看meta.properties $ cat /tmp/kraft-combined-logs/meta.properties # #Fri Oct 18 14:35:45 CST 2024 cluster.id=mycluster version=1 directory.id=Mo0S_N719s7Tw_GVSKS9Vw node.id=1 注释 [TODO] 这里产生个问题，这一步初始化是所有的broker都需要，还是只有controller才需要？'><meta itemprop=datePublished content="2024-10-18T09:42:34+08:00"><meta itemprop=dateModified content="2024-10-18T09:42:34+08:00"><meta itemprop=wordCount content="321"><title>Kafka的基础安装使用 - 我是个bug</title>
+<link href=/kafka/install/index.xml rel=alternate type=application/rss+xml title="Kafka的基础安装使用 - 我是个bug"><link href=/css/fontawesome-all.min.css?1729261424 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/css/fontawesome-all.min.css?1729261424 rel=stylesheet></noscript><link href=/css/nucleus.css?1729261424 rel=stylesheet><link href=/css/auto-complete.css?1729261424 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/css/auto-complete.css?1729261424 rel=stylesheet></noscript><link href=/css/perfect-scrollbar.min.css?1729261424 rel=stylesheet><link href=/css/fonts.css?1729261424 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/css/fonts.css?1729261424 rel=stylesheet></noscript><link href=/css/theme.css?1729261424 rel=stylesheet><link href=/css/theme-blue.css?1729261424 rel=stylesheet id=R-variant-style><link href=/css/chroma-learn.css?1729261424 rel=stylesheet id=R-variant-chroma-style><link href=/css/print.css?1729261424 rel=stylesheet media=print><script src=/js/variant.js?1729261424></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../..",window.relearn.absBaseUri="https://iamabug.github.io",window.relearn.disableAnchorCopy=!1,window.relearn.disableAnchorScrolling=!1,window.variants&&variants.init(["blue"]),window.T_Copy_to_clipboard=`复制到剪贴板`,window.T_Copied_to_clipboard=`复制到剪贴板！`,window.T_Copy_link_to_clipboard=`将链接复制到剪贴板`,window.T_Link_copied_to_clipboard=`链接复制到剪贴板！`,window.T_Reset_view=`重置视图`,window.T_View_reset=`查看重置！`,window.T_No_results_found=`找不到"{0}"的结果`,window.T_N_results_found=`为"{0}"找到 {1} 个结果`</script></head><body class="mobile-support html" data-url=/kafka/install/index.html><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="导航 (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div><div class="topbar-button topbar-button-toc" data-content-empty=hide data-width-s=show data-width-m=show data-width-l=show><button class=topbar-control onclick=toggleTopbarFlyout(this) type=button title="目录 (CTRL+ALT+t)"><i class="fa-fw fas fa-list-alt"></i></button><div class=topbar-content><div class=topbar-content-wrapper><nav class=TableOfContents><ul><li><a href=#0-确认java环境>0. 确认Java环境</a></li><li><a href=#1-下载kafka>1. 下载Kafka</a></li><li><a href=#2-启动kafka>2. 启动Kafka</a><ul><li><a href=#21-kraft方式启动>2.1 KRaft方式启动</a></li><li><a href=#22-zookeeper方式启动>2.2 Zookeeper方式启动</a></li></ul></li><li><a href=#3-验证kafka>3. 验证Kafka</a><ul><li><a href=#31-创建topic>3.1 创建topic</a></li><li><a href=#32-向topic生产消息>3.2 向topic生产消息</a></li><li><a href=#33-从topic消费消息>3.3 从topic消费消息</a></li></ul></li></ul></nav></div></div></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=/kafka/index.html><span itemprop=name>Kafka</span></a><meta itemprop=position content="1">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Kafka的基础安装使用</span><meta itemprop=position content="2"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/kafka/index.html title="Kafka (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/java/index.html title="Java (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div><div class="topbar-button topbar-button-more" data-content-empty=hide data-width-s=show data-width-m=show data-width-l=show><button class=topbar-control onclick=toggleTopbarFlyout(this) type=button title=更多><i class="fa-fw fas fa-ellipsis-v"></i></button><div class=topbar-content><div class=topbar-content-wrapper><div class="topbar-area topbar-area-more" data-area=more></div></div></div></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable kafka" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><h1 id=kafka的基础安装使用>Kafka的基础安装使用</h1><p>打开Kafka官网的quickstart页面：https://kafka.apache.org/quickstart，边读边照做，不理解的去搜索。</p><h2 id=0-确认java环境>0. 确认Java环境</h2><p>如果没有安装Java环境，可以参考<a href=https://iamabug.github.io/java/install-jdk8/>Java环境安装</a></p><h2 id=1-下载kafka>1. 下载Kafka</h2><p>可以从页面上下载，也可以用 <code>wget</code>：</p><pre><code class=language-shell>$ wget https://dlcdn.apache.org/kafka/3.8.0/kafka_2.13-3.8.0.tgz
+</code></pre><p>下载之后解压到合适位置：</p><pre><code class=language-shell>$ tar xvf kafka_2.13-3.8.0.tgz
+$ pwd
+/home/iamabug/workspace
+</code></pre><h2 id=2-启动kafka>2. 启动Kafka</h2><p>官网上给出了四种启动方式，分别是：</p><ul><li>KRaft</li><li>Zookeeper</li><li>基于JVM的docker镜像</li><li>基于GraalVM的docker镜像</li></ul><p>出于实用性考虑，目前只关注前两种方式。</p><h3 id=21-kraft方式启动>2.1 KRaft方式启动</h3><p>简单的来说，KRaft移除了Zookeeper，将元信息的管理放在集群内，简化了系统架构，在稳定性、安全性等方便带来好处。</p><pre><code class=language-shell>$ pwd
+/home/iamabug/workspace/kafka_2.13-3.8.0
+
+# 生成一个集群ID，用于Kraft一致性协议，如果不需要一个有意义的集群ID，可以用自带工具随机生成
+$ KAFKA_CLUSTER_ID=mycluster
+$ KAFKA_CLUSTER_ID=&quot;$(bin/kafka-storage.sh random-uuid)&quot;
+$k echo $KAFKA_CLUSTER_ID
+2e2c8L1FTeSbJSqTq8ISeQ
+</code></pre><p>然后格式化日志目录:</p><pre><code class=language-shell>$ bin/kafka-storage.sh format -t $KAFKA_CLUSTER_ID -c config/kraft/server.properties
+Formatting /tmp/kraft-combined-logs with metadata.version 3.8-IV0.
+</code></pre><p>可以看到这一步的作用是根据配置文件初始化了/tmp/kraft-combined-logs目录，查看目录下的文件内容：</p><pre><code class=language-shell>$ ls /tmp/kraft-combined-logs/
+bootstrap.checkpoint  meta.properties
+
+## bootstrap.checkpoint不是可读文件，查看meta.properties
+$ cat /tmp/kraft-combined-logs/meta.properties
+#
+#Fri Oct 18 14:35:45 CST 2024
+cluster.id=mycluster
+version=1
+directory.id=Mo0S_N719s7Tw_GVSKS9Vw
+node.id=1
+</code></pre><div class="box notices cstyle note"><div class=box-label><i class="fa-fw fas fa-exclamation-circle"></i> 注释</div><div class=box-content><p>[TODO] 这里产生个问题，这一步初始化是所有的broker都需要，还是只有controller才需要？</p></div></div><p>最后启动Kafka：</p><pre><code class=language-shell>$ bin/kafka-server-start.sh config/kraft/server.properties
+</code></pre><p>不出意外将输出大量日志，最后几行的内容如下：</p><pre><code class=language-shell>[2024-10-18 14:59:16,941] INFO Kafka version: 3.8.0 (org.apache.kafka.common.utils.AppInfoParser)
+[2024-10-18 14:59:16,941] INFO Kafka commitId: 771b9576b00ecf5b (org.apache.kafka.common.utils.AppInfoParser)
+[2024-10-18 14:59:16,941] INFO Kafka startTimeMs: 1729234756940 (org.apache.kafka.common.utils.AppInfoParser)
+[2024-10-18 14:59:16,942] INFO [KafkaRaftServer nodeId=1] Kafka Server started (kafka.server.KafkaRaftServer)
+</code></pre><p>这表明broker已经正常启动，虽然只有一个节点。</p><h3 id=22-zookeeper方式启动>2.2 Zookeeper方式启动</h3><p>这是传统方式，需要两个终端，第一个终端启动Zookeeper：</p><pre><code class=language-shell>$ bin/zookeeper-server-start.sh config/zookeeper.properties
+
+## 如下为部分日志
+[2024-10-18 15:08:42,825] INFO Snapshot taken in 0 ms (org.apache.zookeeper.server.ZooKeeperServer)
+[2024-10-18 15:08:42,832] INFO PrepRequestProcessor (sid:0) started, reconfigEnabled=false (org.apache.zookeeper.server.PrepRequestProcessor)
+[2024-10-18 15:08:42,832] INFO zookeeper.request_throttler.shutdownTimeout = 10000 ms (org.apache.zookeeper.server.RequestThrottler)
+[2024-10-18 15:08:42,844] INFO Using checkIntervalMs=60000 maxPerMinute=10000 maxNeverUsedIntervalMs=0 (org.apache.zookeeper.server.ContainerManager)
+[2024-10-18 15:08:42,845] INFO ZooKeeper audit is disabled. (org.apache.zookeeper.audit.ZKAuditProvider)
+</code></pre><p>另一个终端启动broker：</p><pre><code class=language-shell>$ bin/kafka-server-start.sh config/server.properties
+## 下面为部分日志
+[2024-10-18 15:09:30,868] INFO Kafka version: 3.8.0 (org.apache.kafka.common.utils.AppInfoParser)
+[2024-10-18 15:09:30,869] INFO Kafka commitId: 771b9576b00ecf5b (org.apache.kafka.common.utils.AppInfoParser)
+[2024-10-18 15:09:30,869] INFO Kafka startTimeMs: 1729235370867 (org.apache.kafka.common.utils.AppInfoParser)
+[2024-10-18 15:09:30,869] INFO [KafkaServer id=0] started (kafka.server.KafkaServer)
+</code></pre><div class="box notices cstyle info"><div class=box-label><i class="fa-fw fas fa-info-circle"></i> 信息</div><div class=box-content><p>可以看到，Zookeeper方式用的config目录下的配置文件，而KRaft方式使用的config/kraft目录下的配置文件</p></div></div><h2 id=3-验证kafka>3. 验证Kafka</h2><p>在单节点的Kraft方式启动的Kafka上测试创建Topic、生产数据和消费数据等功能。</p><h3 id=31-创建topic>3.1 创建topic</h3><p>启动Kafka后，用 kafka-topics.sh 命令行工具创建topic：</p><pre><code class=language-shell>$ bin/kafka-topics.sh --create --topic iamabug-test --bootstrap-server localhost:9092
+Created topic iamabug-test.
+</code></pre><p>使用 describe 子命令可以看到新建的 topic 的更多细节：</p><pre><code class=language-shell>$ bin/kafka-topics.sh --describe --topic iamabug-test --bootstrap-server localhost:9092
+## 第一行输出为Topic信息
+## 第二行输出为Partiontion信息，此Topic只有一个Partiontion
+Topic: iamabug-test	TopicId: 7UYTFwG6Qbylh_ccU6VoEQ	PartitionCount: 1	ReplicationFactor: 1	Configs: segment.bytes=1073741824
+	Topic: iamabug-test	Partition: 0	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+</code></pre><h3 id=32-向topic生产消息>3.2 向topic生产消息</h3><p>用 kafka-console-producer.sh 工具生产消息</p><pre><code class=language-shell>$ bin/kafka-console-producer.sh --topic iamabug-test --bootstrap-server localhost:9092
+&gt;tomorrow will be better
+&gt;never say never
+&gt;中国    
+&gt;^C%
+## 用 Ctrl+C 停止 
+</code></pre><h3 id=33-从topic消费消息>3.3 从topic消费消息</h3><p>用到的工具为 kafka-console-consumer.sh：</p><pre><code class=language-shell>$ bin/kafka-console-consumer.sh --topic iamabug-test --from-beginning --bootstrap-server localhost:9092
+tomorrow will be better
+never say never
+中国
+
+## 这里仍然在等待新消息，需要用 Ctrl+C 手动中断
+</code></pre><p>如果需要删除 topic，使用 kafka-topics.sh 工具的 delete 命令：</p><pre><code class=language-shell>$ bin/kafka-topics.sh --delete --topic iamabug-test --bootstrap-server localhost:9092
+## 正常删除没有输出
+</code></pre><footer class=footline></footer></article></div></main></div><aside id=R-sidebar class="default-animation showVisitedLinks"><div id=R-header-topbar class=default-animation></div><div id=R-header-wrapper class=default-animation><div id=R-header class=default-animation><a id=R-logo class=R-default href=/index.html>我是个bug</a></div><script>window.index_js_url="/searchindex.js?1729261424"</script><search><form action=/search/index.html method=get><div class="searchbox default-animation"><button class=search-detail type=submit title="搜索 (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+<label class=a11y-only for=R-search-by>搜索</label>
+<input data-search-input id=R-search-by name=search-by class=search-by type=search placeholder=搜索...>
+<button class=search-clear type=button data-search-clear title=清除搜索><i class="fas fa-times" title=清除搜索></i></button></div></form></search><script>var contentLangs=["zh"]</script><script src=/js/auto-complete.js?1729261424 defer></script><script src=/js/lunr/lunr.min.js?1729261424 defer></script><script src=/js/lunr/lunr.stemmer.support.min.js?1729261424 defer></script><script src=/js/lunr/lunr.multi.min.js?1729261424 defer></script><script src=/js/lunr/lunr.zh.min.js?1729261424 defer></script><script src=/js/search.js?1729261424 defer></script></div><div id=R-homelinks class="default-animation homelinks"><ul><li><a class=padding href=/index.html><i class="fa-fw fas fa-home"></i> Home</a></li></ul><hr class=padding></div><div id=R-content-wrapper class=highlightable><div id=R-topics><ul class="enlarge morespace collapsible-menu"><li class=parent data-nav-id=/kafka/index.html><a class=padding href=/kafka/index.html>Kafka<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-7670a2896d50884560d78c0f598e8eff class=collapsible-menu><li class=active data-nav-id=/kafka/install/index.html><a class=padding href=/kafka/install/index.html>Kafka的基础安装使用<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/java/index.html><a class=padding href=/java/index.html>Java<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-a533dae2ec66f5b51d3c38ec9d934c01 class=collapsible-menu></ul></li></ul></div><div id=R-shortcuts><div class="nav-title padding">更多</div><ul class=space><li><a class=padding href=/tags/index.html><i class='fas fa-tags'></i> Tags</a></li></ul></div><div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div><div id=R-menu-footer><hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"><div id=R-prefooter class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks"><ul><li id=R-select-language-container class=footerLangSwitch><div class="padding menu-control"><i class="fa-fw fas fa-language"></i>
+<span>&nbsp;</span><div class=control-style><label class=a11y-only for=R-select-language>语言</label>
+<select id=R-select-language onchange="location=this.querySelector(this.value).dataset.url"><option id=R-select-language-zh-cn value=#R-select-language-zh-cn data-url=/kafka/install/index.html lang=zh-cn selected></option></select></div><div class=clear></div></div></li><li id=R-select-variant-container class=footerVariantSwitch><div class="padding menu-control"><i class="fa-fw fas fa-paint-brush"></i>
+<span>&nbsp;</span><div class=control-style><label class=a11y-only for=R-select-variant>主题</label>
+<select id=R-select-variant onchange=window.variants&&variants.changeVariant(this.value)><option id=R-select-variant-blue value=blue selected>Blue</option></select></div><div class=clear></div></div><script>window.variants&&variants.markSelectedVariant()</script></li><li class="footerVisitedLinks showVisitedLinks"><div class="padding menu-control"><i class="fa-fw fas fa-history"></i>
+<span>&nbsp;</span><div class=control-style><button onclick=clearHistory()>清理历史记录</button></div><div class=clear></div></div></li></ul></div><div id=R-footer class="footerFooter showFooter"><p>Built with <a href=https://github.com/McShelby/hugo-theme-relearn title=love><i class="fas fa-heart"></i></a> by <a href=https://gohugo.io/>Hugo</a></p></div></div></div></aside><script src=/js/clipboard.min.js?1729261424 defer></script><script src=/js/perfect-scrollbar.min.js?1729261424 defer></script><script src=/js/theme.js?1729261424 defer></script></body></html>
