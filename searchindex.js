@@ -1,14 +1,6 @@
 var relearn_searchindex = [
   {
     "breadcrumb": "",
-    "content": "计算机基础。",
-    "description": "计算机基础。",
-    "tags": [],
-    "title": "数据结构与算法",
-    "uri": "/leetcode/index.html"
-  },
-  {
-    "breadcrumb": "",
     "content": "This is a new chapter.",
     "description": "This is a new chapter.",
     "tags": [],
@@ -22,6 +14,14 @@ var relearn_searchindex = [
     "tags": [],
     "title": "Kafka设计原理",
     "uri": "/kafka/design/index.html"
+  },
+  {
+    "breadcrumb": "",
+    "content": "计算机基础。",
+    "description": "计算机基础。",
+    "tags": [],
+    "title": "数据结构与算法",
+    "uri": "/leetcode/index.html"
   },
   {
     "breadcrumb": "",
