@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://iamabug.github.io/MiniMind/">
+        <link rel="canonical" href="https://iamabug.github.io/blog/">
       
       
         <link rel="prev" href="..">
       
+      
+        <link rel="next" href="Minimind/MiniMind/">
       
       
       <link rel="icon" href="../assets/media-logo.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>MiniMind - 硬学AI工坊</title>
+        <title>Index - 硬学AI工坊</title>
       
     
     
@@ -79,11 +81,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -115,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MiniMind
+              Index
             
           </span>
         </div>
@@ -198,16 +195,17 @@
     
   
   
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
-        
-  
     
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
   
-  MiniMind
+  Blog
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -280,24 +278,120 @@
   
   
   
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
-      
-        
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    MiniMind
+    Index
     
   </span>
   
 
       </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="Minimind/MiniMind/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Minimind
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -319,101 +413,9 @@
 
 
 
-<p>Minimind 是一个“小”语言模型，总共只有 2500 万个参数，最小版本体积只有 GPT-3 的七千分之一，作者称只需要3块钱+2小时就可以完成训练，项目地址为：https://github.com/jingyaogong/minimind。</p>
-<blockquote>
-<p>为防止误解，“2小时” 基于NVIDIA 3090硬件设备（单卡）测试，“3块钱” 指GPU服务器租用成本，具体规格详情见下文。</p>
-</blockquote>
-<p>Minimind 完全从0开始，对大语言模型实现了全阶段开源复现，是入门 LLM 的绝佳教程。
-本文将根据项目文档完成两阶段训练（预训练和有监督微调），初步感受一下“大”模型的训练过程：</p>
-<p><img alt="" src="https://fastly.jsdelivr.net/gh/bucketio/img12@main/2025/03/03/1740976894947-63d9b22d-61dd-488b-8534-4601d1092181.png" /></p>
-<p><img alt="" src="https://fastly.jsdelivr.net/gh/bucketio/img7@main/2025/03/03/1740976981789-972b56b9-bc53-4e90-99af-a364e4aec6ea.png" /></p>
-<p><img alt="" src="https://fastly.jsdelivr.net/gh/bucketio/img18@main/2025/03/03/1740977028948-1341bd40-a186-4c94-867c-a5aa56c8e21d.png" /></p>
-<h1 id="_1">环境准备</h1>
-<p>Minimind 作者的软硬件配置（仅供参考）：</p>
-<ul>
-<li>CPU: Intel(R) Core(TM) i9-10980XE CPU @ 3.00GHz</li>
-<li>RAM: 128 GB</li>
-<li>GPU: NVIDIA GeForce RTX 3090(24GB) * 8</li>
-<li>Ubuntu 20.04</li>
-<li>CUDA 12.2</li>
-<li>Python 3.10.16</li>
-<li>requirements.txt</li>
-</ul>
-<p>我的软硬件配置（我的个人电脑GPU只有500M显存，所以使用了云主机）：</p>
-<ul>
-<li>ModelScope 免费提供的阿里云PAI-DSW实例（36个小时，完成本文训练共花费<strong>4小时</strong>左右）</li>
-<li>8核CPU + 32GB内存</li>
-<li>NIVDIA A10，24G显存</li>
-<li>Ubuntu 22.04</li>
-<li>CUDA 12.1</li>
-<li>Python 3.10.16（Miniconda虚拟环境）</li>
-</ul>
-<p><img alt="ModelScope提供的免费GPU实例" src="https://fastly.jsdelivr.net/gh/bucketio/img9@main/2025/03/02/1740919541238-6d8f63cd-5be4-4105-9ce9-ac28bc5ae70e.png" /></p>
-<h1 id="_2">获取代码</h1>
-<pre><code class="language-bash"># 从 github 下载代码并进入项目目录
-git clone https://github.com/jingyaogong/minimind.git
-cd minimind
+  <h1>Index</h1>
 
-# 创建虚拟环境并激活
-conda create --name minimind python=3.10.16
-conda init
-conda activate minimind
 
-# 安装需要的依赖
-pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simp
-</code></pre>
-<h1 id="_3">下载数据</h1>
-<pre><code class="language-bash"># 还是在 minimind 目录
-pip install modelscope
-
-modelscope download --dataset gongjy/minimind_dataset --local_dir ./dataset
-</code></pre>
-<p>总共下载了 20 多 G 的数据，都是 jsonl 格式：</p>
-<p><img alt="" src="https://fastly.jsdelivr.net/gh/bucketio/img6@main/2025/03/02/1740922061508-bbb2e723-3ce6-4643-8842-cc2c3e9969f4.png" /></p>
-<h1 id="_4">预训练</h1>
-<p>预训练需要执行一个 python 文件：</p>
-<pre><code class="language-bash">python train_pretrain.py
-</code></pre>
-<p>预训练过程其实是有一些参数可以调整的，但为了快速完成训练，我们先全部使用默认参数。</p>
-<p>预训练所使用的数据：</p>
-<p><img alt="" src="https://fastly.jsdelivr.net/gh/bucketio/img11@main/2025/03/03/1740977100402-87747b67-a9ae-41e5-8faf-55dc14894564.png" /></p>
-<p>在我的这个云主机里，训练一个 epoch大概需要两个小时：</p>
-<p><img alt="预训练" src="https://fastly.jsdelivr.net/gh/bucketio/img11@main/2025/03/02/1740922659286-b83d631d-eb07-41be-8c4c-83a9ec466966.png" /></p>
-<h1 id="_5">有监督微调</h1>
-<p>有监督微调也只需要执行一个 python 文件：</p>
-<pre><code class="language-bash">python train_full_sft.py
-</code></pre>
-<p>微调使用的数据格式和预训练不同，对对话的双方做了区分：
-<img alt="" src="https://fastly.jsdelivr.net/gh/bucketio/img12@main/2025/03/03/1740977134292-c13bc377-8eff-4fb8-97cf-84ba2f5bea02.png" /></p>
-<p>从肉眼上看，微调的速度比预训练略快：
-<img alt="有监督微调" src="https://fastly.jsdelivr.net/gh/bucketio/img14@main/2025/03/02/1740922892723-3a1c8f5a-64fb-48c4-ad86-4ff47b55c281.png" /></p>
-<h1 id="_6">模型评估</h1>
-<p>经过上面的训练，我们得到了两个模型，一个是预训练模型，一个是微调模型，都在 out 目录下：</p>
-<p><img alt="" src="https://fastly.jsdelivr.net/gh/bucketio/img2@main/2025/03/02/1740923152880-bcf6dda0-4b4c-4b76-8f12-eb989b1d2510.png" /></p>
-<p>可以看到两个模型的大小一模一样，说明两个模型的结构应该是相同的。
-下面我们使用 <code>python eval_model.py</code> 来比较两个模型的表现，<code>eval_model.py</code> 这个文件接收两个参数：
-* <code>--load</code> 参数，用来指示加载我们自己训练的模型（在 <code>out</code> 目录），还是加载从Huggingface下载下来的模型（在 <code>MiniMind2</code> 目录）；
-* <code>model_mode</code> 参数，用来指示加载哪个阶段的模型，0表示预训练模型，1表示微调模型，2表示RLHF模型等；</p>
-<p>首先是项目自带的评测：</p>
-<p><img alt="预训练模型-自动评测" src="https://fastly.jsdelivr.net/gh/bucketio/img5@main/2025/03/02/1740923759183-cb27e94d-4a14-4b2c-b4fb-bfb19db00f2b.png" /></p>
-<p><img alt="微调模型-自动评测" src="https://fastly.jsdelivr.net/gh/bucketio/img1@main/2025/03/02/1740923746031-49a7b09d-b07f-4cdc-ab90-d7c10d5a1b93.png" /></p>
-<p>可以看出，虽然都只训练了一个epoch，微调后的模型比预训练模型明显强了很多，即使存在信息不准确或者错误，但是对话的语气和意图是很明显的，而预训练模型就差了很多，而且看起来似乎有时没办法终止对话。</p>
-<p>再来看看人工评测，我问了两个模型三个相同问题：
-* 豆腐脑甜的好吃还是咸的好吃？
-* 大模型是什么东西？
-* 邓紫棋哪首歌好听？</p>
-<p>下面是它们的回答：</p>
-<p><img alt="预训练模型-人工评测" src="https://fastly.jsdelivr.net/gh/bucketio/img6@main/2025/03/02/1740924059072-1abe12ef-d462-4324-9b56-43b2da56cd71.png" /></p>
-<p><img alt="微调模型-人工评测" src="https://fastly.jsdelivr.net/gh/bucketio/img16@main/2025/03/02/1740924064569-880c2f61-c39d-4431-a62e-e5332ab5c456.png" /></p>
-<p>和自动评测的结果差不多，微调模型“知道”自己在对话，而预训练模型的回答非常发散。</p>
-<p>项目也提供了 Web 页面和模型交互的方法，通过 <code>streamlit</code> 实现：</p>
-<pre><code class="language-bash">cd scripts
-streamlit run web_demo.py
-</code></pre>
-<p>对话界面长这样：</p>
-<p><img alt="" src="https://fastly.jsdelivr.net/gh/bucketio/img9@main/2025/03/03/1740983155102-45a91428-2239-4c13-99d1-626508e9ba64.png" /></p>
-<h1 id="_7">后续</h1>
-<p>以上就是我的 Minimind 初体验，由于时间和成本问题，预训练模型和微调模型都只训练了一个 epoch，模型表现不是很给力，但是这不影响我们了解大模型的训练过程，后续我会进一步深入研究 Minimind 项目，包括复现其它的训练阶段，研究训练代码，以及过程中发现的其他问题。如果你也对此感兴趣，或者有学习大模型的建议，欢迎指点和交流！</p>
 
 
 
