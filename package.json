@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "sync:pages": "npm run build && cp dist/index.html index.html && cp dist/.nojekyll .nojekyll",
     "preview": "astro preview",
     "astro": "astro"
   },

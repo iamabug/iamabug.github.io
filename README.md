@@ -11,3 +11,9 @@ npm run build
 ```
 
 GitHub Pages should use **GitHub Actions** as the publishing source.
+
+If the repository is still configured as **Deploy from a branch** with `/ (root)`, run this before committing:
+
+```bash
+npm run sync:pages
+```
