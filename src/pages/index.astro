@@ -1,0 +1,253 @@
+---
+const sections = [
+  {
+    title: "文章",
+    description: "从 ChatGPT 对话、Codex 输出和日常思考里整理出来的长文。",
+    href: "#articles",
+  },
+  {
+    title: "项目",
+    description: "记录正在做的工具、实验、仓库和产品原型。",
+    href: "#projects",
+  },
+  {
+    title: "视频",
+    description: "给视频、口播稿、字幕和延展阅读留一个稳定入口。",
+    href: "#videos",
+  },
+];
+
+const notes = [
+  "先把个人站作为内容源头跑起来。",
+  "再把 Markdown、视频页、RSS 和搜索一层层补上。",
+  "所有内容先服务于沉淀，不急着追求完整系统。",
+];
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="iamabug 的个人内容中心：文章、项目记录和视频笔记。" />
+    <title>iamabug · 内容中心</title>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="masthead">
+        <div>
+          <p class="eyebrow">iamabug.github.io</p>
+          <h1>把思考、项目和视频慢慢沉淀下来。</h1>
+          <p class="intro">
+            这是一个 Astro 驱动的个人内容中心原型。第一步先让发布链路跑通，之后再把 Markdown
+            内容、项目笔记和视频页接进来。
+          </p>
+        </div>
+        <img src="https://github.com/iamabug.png" alt="iamabug 的 GitHub 头像" width="128" height="128" />
+      </header>
+
+      <section class="grid" aria-label="内容分类">
+        {
+          sections.map((item) => (
+            <a class="card" href={item.href}>
+              <span>{item.title}</span>
+              <p>{item.description}</p>
+            </a>
+          ))
+        }
+      </section>
+
+      <section class="panel" aria-labelledby="next-title">
+        <div>
+          <p class="eyebrow">Next</p>
+          <h2 id="next-title">接下来可以这样长出来</h2>
+        </div>
+        <ul>
+          {notes.map((note) => <li>{note}</li>)}
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
+
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f7f5ef;
+    --ink: #17211f;
+    --muted: #5c6763;
+    --line: #d7d1c3;
+    --panel: #fffdf8;
+    --accent: #0f766e;
+    --accent-strong: #b42318;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family:
+      Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.65;
+    color: var(--ink);
+    background:
+      linear-gradient(135deg, rgba(15, 118, 110, 0.12), transparent 34%),
+      linear-gradient(225deg, rgba(180, 35, 24, 0.1), transparent 30%),
+      var(--bg);
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .shell {
+    width: min(1080px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 72px 0 56px;
+  }
+
+  .masthead {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 40px;
+    align-items: start;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .masthead img {
+    width: 128px;
+    height: 128px;
+    border-radius: 28px;
+    border: 1px solid rgba(23, 33, 31, 0.12);
+    box-shadow: 0 18px 45px rgba(23, 33, 31, 0.16);
+  }
+
+  .eyebrow {
+    margin: 0 0 12px;
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  h1,
+  h2,
+  p {
+    margin-top: 0;
+  }
+
+  h1 {
+    max-width: 780px;
+    margin-bottom: 20px;
+    font-size: 54px;
+    line-height: 1.08;
+    font-weight: 760;
+  }
+
+  h2 {
+    margin-bottom: 0;
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .intro {
+    max-width: 680px;
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 18px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 32px 0;
+  }
+
+  .card,
+  .panel {
+    border: 1px solid var(--line);
+    background: rgba(255, 253, 248, 0.86);
+    backdrop-filter: blur(14px);
+  }
+
+  .card {
+    min-height: 168px;
+    padding: 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition:
+      transform 160ms ease,
+      border-color 160ms ease,
+      box-shadow 160ms ease;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(15, 118, 110, 0.45);
+    box-shadow: 0 18px 36px rgba(23, 33, 31, 0.1);
+  }
+
+  .card span {
+    display: block;
+    margin-bottom: 14px;
+    color: var(--accent-strong);
+    font-size: 20px;
+    font-weight: 760;
+  }
+
+  .card p {
+    margin-bottom: 0;
+    color: var(--muted);
+  }
+
+  .panel {
+    display: grid;
+    grid-template-columns: 0.82fr 1fr;
+    gap: 28px;
+    padding: 28px;
+    border-radius: 8px;
+  }
+
+  .panel ul {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding-left: 20px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 760px) {
+    .shell {
+      width: min(100% - 28px, 1080px);
+      padding-top: 40px;
+    }
+
+    .masthead,
+    .panel {
+      grid-template-columns: 1fr;
+    }
+
+    .masthead {
+      gap: 24px;
+    }
+
+    .masthead img {
+      width: 96px;
+      height: 96px;
+      border-radius: 20px;
+    }
+
+    h1 {
+      font-size: 38px;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
